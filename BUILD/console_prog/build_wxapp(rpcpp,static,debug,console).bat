@@ -18,7 +18,7 @@ set LIBS=-lwxmsw32ud_core -lwxbase32ud -lwxpngd -lwxjpegd -lwxtiffd -lwxzlibd -l
 if exist myappd.exe del myappd.exe
 
 :: Компиляция с флагами
-echo Compiling and assembling the program (static,debug) ...
+echo Compiling and assembling the program (static,debug,console) ...
 g++ -o myappd.exe *.cpp ^
     -I%WX_DIR%\include ^
     -I%WX_DIR%\lib\gcc_lib\mswud ^
@@ -29,12 +29,12 @@ g++ -o myappd.exe *.cpp ^
     -O0 ^
     -static ^
     -finput-charset=utf-8 ^
-    -mwindows
+    -lstdc++ ^
+    -lsqlite3
 
 :: Проверяем, успешно ли был собран .exe файл
 if exist myappd.exe (
     echo Compilation completed successfully. Launching program ...
-    start /b myappd.exe
 ) else (
     echo Compilation error !
 )

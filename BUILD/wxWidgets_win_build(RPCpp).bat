@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 
 :: Устанавливаем путь к wxWidgets
 set WX_DIR=D:\Development\RedPanda-CPP\wxWidgets

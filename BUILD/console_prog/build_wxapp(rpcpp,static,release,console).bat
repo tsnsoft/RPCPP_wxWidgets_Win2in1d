@@ -18,7 +18,7 @@ set LIBS=-lwxmsw32u_core -lwxbase32u -lwxpng -lwxjpeg -lwxtiff -lwxzlib -lwxrege
 if exist myapp.exe del myapp.exe
 
 :: Компиляция с флагами
-echo Compiling and assembling the program (static,release) ...
+echo Compiling and assembling the program (static,release,console) ...
 g++ -o myapp.exe *.cpp ^
     -I%WX_DIR%\include ^
     -I%WX_DIR%\lib\gcc_lib\mswu ^
@@ -29,12 +29,12 @@ g++ -o myapp.exe *.cpp ^
     -O2 ^
     -DNDEBUG ^
     -finput-charset=utf-8 ^
-    -mwindows
+    -lstdc++ ^
+    -lsqlite3
 
 :: Проверяем, успешно ли был собран .exe файл
 if exist myapp.exe (
     echo Compilation completed successfully. Launching program ...
-    start /b myapp.exe
 ) else (
     echo Compilation error !
 )
