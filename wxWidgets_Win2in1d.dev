@@ -12,7 +12,7 @@ MakeIncludes =
 PrivateResource = wxWidgets_Win2in1d_private.rc
 Compiler = 
 CppCompiler = -pipe -mthreads -D__GNUWIN32__ -D__WXMSW__ -DwxUSE_UNICODE -Wall -g -O0
-Linker = -mthreads -lwxmsw32ud_core -lwxbase32ud -lwxpngd -lwxjpegd -lwxtiffd -lwxzlibd -lwxregexud -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lcomctl32 -lwsock32 -lodbc32 -lshlwapi -lversion -loleacc -luxtheme -mwindows -lstdc++ -finput-charset=utf-8
+Linker = -mthreads -lwxmsw32ud_core -lwxbase32ud -lwxpngd -lwxjpegd -lwxtiffd -lwxzlibd -lwxregexud -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lcomctl32 -lwsock32 -lodbc32 -lshlwapi -lversion -loleacc -luxtheme -mwindows -lstdc++ -finput-charset=utf-8 -static
 ResourceCommand = 
 IsCpp = 1
 Icon = app.ico
@@ -44,16 +44,16 @@ UseUTF8 = 1
 
 
 [Unit1]
-FileName = forms.cpp
+FileName = forms.fbp
 CompileCpp = 1
-Folder = Sources
-Compile = 1
-Link = 1
+Folder = Others
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
-RealEncoding = UTF-8
+RealEncoding = ASCII
 
 
 [VersionInfo]
@@ -90,16 +90,16 @@ RealEncoding = UTF-8
 
 
 [Unit3]
-FileName = controls.cpp
+FileName = tsnsoft.xpm
 CompileCpp = 1
-Folder = Sources
-Compile = 1
-Link = 1
+Folder = Others
+Compile = 0
+Link = 0
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
-RealEncoding = UTF-8
+RealEncoding = ASCII
 
 
 [Unit4]
@@ -116,19 +116,32 @@ RealEncoding = UTF-8
 
 
 [Unit5]
-FileName = forms.fbp
+FileName = forms.cpp
 CompileCpp = 1
-Folder = Others
-Compile = 0
-Link = 0
+Folder = Sources
+Compile = 1
+Link = 1
 Priority = 1000
 OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
-RealEncoding = ASCII
+RealEncoding = UTF-8
 
 
 [Unit6]
+FileName = controls.cpp
+CompileCpp = 1
+Folder = Sources
+Compile = 1
+Link = 1
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+FileEncoding = PROJECT
+RealEncoding = UTF-8
+
+
+[Unit7]
 FileName = main.h
 CompileCpp = 0
 Folder = Headers
@@ -139,19 +152,6 @@ OverrideBuildCmd = 0
 BuildCmd = 
 FileEncoding = PROJECT
 RealEncoding = UTF-8
-
-
-[Unit7]
-FileName = tsnsoft.xpm
-CompileCpp = 0
-Folder = Others
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-FileEncoding = PROJECT
-RealEncoding = ASCII
 
 
 [CompilerSettings]
