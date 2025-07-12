@@ -16,7 +16,6 @@ bool MyApp::OnInit() {
 // Реализуем конструктор основного окна
 MyMainFrame::MyMainFrame(wxWindow* parent)
 	: MainFrame(parent) {
-	wxInitAllImageHandlers(); // Инициализируем все обработчики изображений
 	this->SetIcon(wxIcon(tsnsoft_xpm)); // Устанавливаем иконку для окна
 
 	 // Привязываем событие закрытия окна к функции OnClose
